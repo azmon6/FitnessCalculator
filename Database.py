@@ -1,6 +1,4 @@
-from sqlalchemy import create_engine, Column, Integer, String, Boolean, DATE, ForeignKey
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import sessionmaker
+from sqlalchemy import Column, Integer, String, Boolean, DATE, ForeignKey
 import sqlalchemy
 
 Base = sqlalchemy.orm.declarative_base()

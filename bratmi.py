@@ -1,17 +1,15 @@
 import sys
 sys.path.insert(1, 'Pages')
 
-from sqlalchemy import create_engine, Column, Integer, String, Boolean, DATE, ForeignKey
-from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
-from Database import Food, History, HistoryEntry, Base
+from Database import Base
 from MainPage import MainPage
 from AddHistoryPage import AddHistoryPage
 from AddFoodPage import AddFoodPage
 
 import tkinter as tk
-from tkinter import ttk
 
 class App:
     
@@ -25,10 +23,8 @@ class App:
 
         engine = create_engine('sqlite:///my_database.db')
 
-        # Create the users table (if it doesn't already exist)
         Base.metadata.create_all(engine)
 
-        # Create a session to interact with the database
         Session = sessionmaker(bind=engine)
         self.database = Session()
     
