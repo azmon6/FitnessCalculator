@@ -21,6 +21,9 @@ class History(Base):
     id = Column(Integer, primary_key=True)
     calories = Column(Integer,default=0)
     date = Column(DATE)
+    day = Column(Integer)
+    month = Column(Integer)
+    year = Column(Integer)
     
 class HistoryEntry(Base):
     __tablename__ = "historyentry"
