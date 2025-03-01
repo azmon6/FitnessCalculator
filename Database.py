@@ -20,7 +20,7 @@ class History(Base):
     
     id = Column(Integer, primary_key=True)
     calories = Column(Integer,default=0)
-    date = Column(DATE)
+    # date = Column(DATE)
     day = Column(Integer)
     month = Column(Integer)
     year = Column(Integer)
@@ -29,4 +29,6 @@ class HistoryEntry(Base):
     __tablename__ = "historyentry"
     
     id = Column(Integer, primary_key=True)
+    historyId = Column(Integer, ForeignKey("history.id"))
     foodId = Column(Integer, ForeignKey("foods.id"))
+    amount = Column(Integer)
